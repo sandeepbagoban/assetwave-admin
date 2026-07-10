@@ -12,6 +12,7 @@ import BuyersList from './pages/buyers/BuyersList';
 import BuyerDetail from './pages/buyers/BuyerDetail';
 import OrdersList from './pages/orders/OrdersList';
 import OrderDetail from './pages/orders/OrderDetail';
+import LogisticsProvidersList from './pages/logisticsProviders/LogisticsProvidersList';
 
 function AdminLayout({ children }) {
   return (
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/buyers/:id" element={<AdminLayout><BuyerDetail /></AdminLayout>} />
         <Route path="/orders" element={<AdminLayout><OrdersList /></AdminLayout>} />
         <Route path="/orders/:id" element={<AdminLayout><OrderDetail /></AdminLayout>} />
+        <Route path="/logistics-providers" element={<AdminLayout><LogisticsProvidersList /></AdminLayout>} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />

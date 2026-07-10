@@ -9,6 +9,7 @@ const LINKS = [
   { to: '/sellers', label: 'Sellers' },
   { to: '/buyers', label: 'Buyers' },
   { to: '/orders', label: 'Orders & Escrow' },
+  { to: '/logistics-providers', label: 'Logistics Providers' },
 ];
 
 export default function Sidebar() {
