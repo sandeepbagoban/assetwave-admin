@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import NotificationBell from './NotificationBell';
 
 const LINKS = [
   { to: '/', label: 'Dashboard', end: true },
@@ -17,8 +18,9 @@ export default function Sidebar() {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-brand">
-        Asset<span>Wave</span> Admin
+      <div className="sidebar-brand" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span>Asset<span>Wave</span> Admin</span>
+        <NotificationBell />
       </div>
       <nav>
         {LINKS.map((link) => (
