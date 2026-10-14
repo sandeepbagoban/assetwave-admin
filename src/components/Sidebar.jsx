@@ -19,7 +19,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span>Asset<span>Wave</span> Admin</span>
+        <span>AWX<span>change</span> Admin</span>
         <NotificationBell />
       </div>
       <nav>

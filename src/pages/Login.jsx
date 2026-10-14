@@ -30,7 +30,7 @@ export default function Login() {
   return (
     <div className="login-shell">
       <div className="login-card">
-        <h1>AssetWave Admin</h1>
+        <h1>AWXchange Admin</h1>
         <div className="login-sub">Sign in with your admin account</div>
         {error && <div className="alert alert-error">{error}</div>}
         <form onSubmit={handleSubmit}>
@@ -43,7 +43,7 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoFocus
-              placeholder="admin@assetwave.com"
+              placeholder="admin@awxchange.com"
             />
           </div>
           <div className="form-group">
