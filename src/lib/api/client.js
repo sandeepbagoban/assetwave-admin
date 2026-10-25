@@ -108,3 +108,11 @@ export const api = {
 };
 
 export { TOKEN_KEY, USER_KEY };
+
+export async function downloadInventory() {
+  const response = await fetch(`${BASE_URL}/admin/listings/export`, { headers: { Authorization: `Bearer ${getToken()}` } });
+  if (!response.ok) throw new Error('Could not export inventory.');
+  const url = URL.createObjectURL(await response.blob());
+  const link = document.createElement('a'); link.href = url; link.download = 'AWXchange_Inventory.xlsx'; link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}

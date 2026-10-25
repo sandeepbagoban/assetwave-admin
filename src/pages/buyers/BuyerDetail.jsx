@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getUser, setUserStatus } from '../../lib/api/buyers';
+import { getUser, setUserStatus, setPilotBuyer } from '../../lib/api/buyers';
 import StatusBadge from '../../components/StatusBadge';
 import ConfirmDialog from '../../components/ConfirmDialog';
 
@@ -83,6 +83,9 @@ export default function BuyerDetail() {
 
       <div className="panel">
         <h2 style={{ marginTop: 0, fontSize: 16 }}>Account Actions</h2>
+        <p>Pilot purchasing: {user.pilot_buyer ? 'Approved' : 'Not approved'}</p>
+        <button className="btn" disabled={submitting} onClick={async () => { setSubmitting(true); setActionError(''); try { await setPilotBuyer(id, !user.pilot_buyer); load(); } catch (e) { setActionError(e.message); } finally { setSubmitting(false); } }}>{user.pilot_buyer ? 'Revoke pilot access' : 'Approve pilot buyer'}</button>
+        {actionError && <div className="alert alert-error">{actionError}</div>}
         <div className="btn-row">
           {user.status === 'active' ? (
             <button className="btn btn-danger" onClick={() => { setConfirmToggle(true); setActionError(''); }}>

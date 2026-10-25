@@ -11,3 +11,5 @@ export function getUser(id) {
 export function setUserStatus(id, status) {
   return api.patch(`/admin/users/${id}`, { status });
 }
+
+export function setPilotBuyer(id, approved) { return api.patch(`/admin/users/${id}/pilot-buyer`, { pilot_buyer: approved }); }
