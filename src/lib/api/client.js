@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000/v1';
+const isLocalHost = ['localhost', '127.0.0.1', '[::1]', '::1'].includes(window.location.hostname);
+const BASE_URL = isLocalHost ? '/v1' : (import.meta.env.VITE_API_BASE_URL || '/v1').replace(/\/$/, '');
 const TOKEN_KEY = 'assetwave_admin_token';
 const USER_KEY = 'assetwave_admin_user';
 
